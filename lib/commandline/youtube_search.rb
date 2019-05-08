@@ -1,12 +1,7 @@
-require_relative '../config/environment'
-
-# https://www.youtube.com/results?search_query=nipsey+hussle
-# https://www.youtube.com/results?search_query=nipsey+hussle+grindin+all+my+life
-
-# def self.google_search(user)
+# def self.youtube_search(user)
 #   prompt = TTY::Prompt.new
 #   query = prompt.ask("What Ruby topic would you like to search?")
-#   html = open("https://www.google.com/search?q=Ruby #{query}")
+#   html = open("https://www.youtube.com/results?search_query= #{query}")
 #   doc = Nokogiri::HTML(html)
 #
 #   link_and_description = doc.search(".g")
@@ -24,4 +19,3 @@ require_relative '../config/environment'
 #   new_tip.save!
 #   new_tip.save_tip_from_search(user)
 # end
-Startup.start 
