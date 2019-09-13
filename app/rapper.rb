@@ -4,7 +4,7 @@ class Rapper < ActiveRecord::Base
   has_many :songs, through: :features
 
   def find_song_by_song_name(song_name)
-    found_song = Song.find_by(title: song_name)
+    found_song = self.songs.find_by(title: song_name)
       found_song
   end
 
@@ -56,9 +56,13 @@ class Rapper < ActiveRecord::Base
   def delete_entire_song(song_name)
   #remove a feature and still have the song
   song = find_song_by_song_name(song_name)
+  if song != nil
   feat = Feature.find_by(song_id: song.id)
   feat.destroy
   song.destroy
+else
+  puts "Sorry couldn't find your song."
+end
   end
 
   def self.find_by_gender(gender)
